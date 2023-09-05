@@ -5,10 +5,11 @@ Matrix multiplication using OpenCL (open source) library and functions to speed 
 
 <details><summary><b>Show instructions</b></summary>
 
-1. Download and install OpenCL SDK (https://github.com/KhronosGroup/OpenCL-SDK) and check all dependencies such as external (you have to download them as well
-and put in the right folder, for example OpenCL-CLHPP will go in OpenCL-SDK-main/external/OpenCL-CLHPP). I'm assuming that you 've put the folder in C:\.
+1. [Windows 10] Download and install OpenCL SDK (https://github.com/KhronosGroup/OpenCL-SDK) and check all dependencies such as external (you have to download them as well
+and put in the right folder, for example OpenCL-CLHPP will go in OpenCL-SDK-main/external/OpenCL-CLHPP).
+I'm assuming that you 've put the folder in C:\\.
 
-2. Check in your file system where is OpenCL.lib and copy the path so you can compile the source code.
+3. Check in your file system where is OpenCL.lib and copy the path so you can compile the source code.
 
 ```sh
 $ \path_to\g++.exe -o matrix_opencl matrix_opencl.cpp -I"C:\OpenCL-SDK-main\external\OpenCL-Headers" -L"\path_to_OpenCL.lib_or_OpenCL.so" -lOpenCL
