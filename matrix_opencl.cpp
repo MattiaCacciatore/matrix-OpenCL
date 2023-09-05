@@ -1,12 +1,14 @@
 // =================================================================================================
-// Project: Exploring the performance of general matrix-multiplication on GPU.
+// Project: Exploring the performance of general matrix multiplication on GPU. (educational purpose)
 //
-// Compilation flags:
-// C:\Users\Mattia\Dev-Cpp\TDM-GCC-64\bin\g++.exe  -o matrix_opencl matrix_opencl.cpp -I"C:\OpenCL-SDK-main\external\OpenCL-Headers" -L"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.2\lib\x64" -lOpenCL
-// -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.2\include" 
-// -I"C:\OpenCL-SDK-main\external\OpenCL-Headers"
-// -L"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.2\lib\x64" -lOpenCL
-// -L"C:\clGPU\common\intel_ocl_icd\windows\Debug\lib\x64\OpenCL.lib" -lOpenCL
+// Compiler flags for Windows:
+// \path_to\g++.exe -o matrix_opencl matrix_opencl.cpp -I"C:\OpenCL-SDK-main\external\OpenCL-Headers" -L"\path_to_OpenCL.lib_or_OpenCL.so" -lOpenCL
+// Compiler flags for Unix (not tested):
+// $ g++ matrix_opencl.cpp -o matrix_opencl -I"\usr\include" -L"\path_to_OpenCL.lib_or_OpenCL.so" -lOpenCL
+//
+// -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.2\include" <--- default path for NVIDIA (Windows 10)
+// -I"C:\OpenCL-SDK-main\external\OpenCL-Headers" <--- my path CL/cl.h header
+// -L"C:\clGPU\common\intel_ocl_icd\windows\Debug\lib\x64\OpenCL.lib" <-- path for Intel (not tested)
 // =================================================================================================
 // 300 -> 3.0 OpenCL version, you can change it (for example 120 and 200).
 #define CL_TARGET_OPENCL_VERSION 300
@@ -69,7 +71,7 @@ void print_matrix(const float* const matrix, const int m, const int n){
 // =================================================================================================
 int main(){
 //------------------------------------ Initialization ----------------------------------------------
-    // Timer.
+	// Timer.
 	std::chrono::high_resolution_clock::time_point start, end;
     // Set the sizes.
     const int K = SIZE, M = SIZE, N = SIZE;
