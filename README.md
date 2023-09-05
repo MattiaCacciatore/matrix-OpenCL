@@ -1,5 +1,6 @@
 # Matrix OpenCL
 Matrix multiplication using OpenCL (open source) library and functions to speed them up with a GPU.
+Original source code link: https://github.com/CNugteren/myGEMM/blob/master/extra/minimal.cpp
 
 ## Usage
 
